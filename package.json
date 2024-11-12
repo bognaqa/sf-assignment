@@ -1,11 +1,11 @@
 {
   "name": "sf-assignment",
-  "version": "1.0.0",
-  "description": "Repository with reqruitment assignment",
+  "version": "1.1.0",
+  "description": "Repository with SF reqruitment assignment",
   "main": "index.js",
   "scripts": {},
   "keywords": [],
-  "author": "",
+  "author": "bognaqa",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.48.2",
