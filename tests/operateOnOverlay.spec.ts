@@ -13,7 +13,6 @@ test.beforeEach(async ({ page }) => {
       
     common = new Common(page);
     await common.clickCookieChoiceDismissButtonIfVisible();
-    await page.waitForTimeout(3000);
 })
 
 test('check overlay elements visibility', async ({ page }) => {

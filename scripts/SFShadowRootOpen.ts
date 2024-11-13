@@ -5,6 +5,6 @@ export async function addScriptToPage(page: Page) {
         const script = document.createElement('script');
         script.type = 'text/javascript';
         script.text = 'window.SFShadowRootOpen = true';
-        document.body.appendChild(script);
+        document.head.appendChild(script);
     });
 }
