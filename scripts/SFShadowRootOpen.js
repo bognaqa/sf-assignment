@@ -1,0 +1,1 @@
+window.SFShadowRootOpen = true;
