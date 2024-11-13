@@ -10,12 +10,12 @@ export class Common {
     }
 
     async clickCookieChoiceDismissButtonIfVisible(): Promise<void> {
-        let cookieChoiceDismissButtonIsEnabled: boolean = await this.cookieChoiceDismissButton.isVisible();
+        let cookieChoiceDismissButtonIsVisible: boolean = await this.cookieChoiceDismissButton.isVisible();
 
-        if (cookieChoiceDismissButtonIsEnabled) {
+        if (cookieChoiceDismissButtonIsVisible) {
             await this.cookieChoiceDismissButton.click();
         } 
-        else if (!cookieChoiceDismissButtonIsEnabled) {
+        else if (!cookieChoiceDismissButtonIsVisible) {
             console.log('Cookie info pop-up is not present.');
         }
         else {
