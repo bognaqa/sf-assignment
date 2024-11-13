@@ -1,5 +1,5 @@
 import { test } from '@playwright/test';
-import { readFileSync } from 'fs';
+import { addScriptToPage } from '../scripts/SFShadowRootOpen';
 import { Common } from '../pages/common.model';
 import { SmartFrame } from '../pages/smartFrame.model';
 
@@ -9,8 +9,7 @@ let smartFrame: SmartFrame;
 test.beforeEach(async ({ page }) => {
     await page.goto('/p/sf-assignment.html');
 
-    const scriptContent = readFileSync('scripts/SFShadowRootOpen.js', 'utf8');
-    await page.evaluate(script => { eval(script); }, scriptContent);
+    await addScriptToPage(page);
       
     common = new Common(page);
     await common.clickCookieChoiceDismissButtonIfVisible();
