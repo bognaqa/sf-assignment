@@ -10,12 +10,4 @@ export class SmartFrame {
         this.smartFrame = page.locator('smartframe-embed');
         this.hyperZoom = page.locator('#HyperZoom');
     }
-
-    async hoverOverSmartFrame(): Promise<void> {
-        await this.smartFrame.hover();
-    }
-
-    async assertFullScreenDisplay(): Promise<void> {
-        await expect(this.hyperZoom).toHaveClass('fullscreen');
-    }
 }

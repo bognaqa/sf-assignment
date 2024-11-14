@@ -1,5 +1,4 @@
 import { test, expect } from '@playwright/test';
-import { SFShadowRootOpenScript } from '../scripts/SFShadowRootOpen';
 import { Common } from '../pages/common.model';
 import { SmartFrame } from '../pages/smartFrame.model';
 import { OverlayHeader } from '../pages/overlay-header.model';
@@ -7,11 +6,11 @@ import { OverlayFooter } from '../pages/overlay-footer.model';
 
 test.beforeEach(async ({ page }) => {
     await page.goto('/p/sf-assignment.html');
-    await SFShadowRootOpenScript(page);
+    await page.addInitScript({ content: 'window.SFShadowRootOpen = true' });
     const common = new Common(page);
     const smartFrame = new SmartFrame(page);
     await common.clickCookieChoiceDismissButtonIfVisible();
-    await smartFrame.hyperZoom.hover();
+    await smartFrame.smartFrame.hover();
 })
 
 test('check overlay elements visibility', async ({ page }) => {
