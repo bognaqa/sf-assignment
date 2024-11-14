@@ -5,8 +5,8 @@ import { OverlayHeader } from '../pages/overlay-header.model';
 import { OverlayFooter } from '../pages/overlay-footer.model';
 
 test.beforeEach(async ({ page }) => {
-    await page.goto('/p/sf-assignment.html');
     await page.addInitScript({ content: 'window.SFShadowRootOpen = true' });
+    await page.goto('/p/sf-assignment.html');
     const common = new Common(page);
     const smartFrame = new SmartFrame(page);
     await common.clickCookieChoiceDismissButtonIfVisible();
